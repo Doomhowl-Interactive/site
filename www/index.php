@@ -1,15 +1,19 @@
 <html>
 
 <head>
-    <title>Doomhowl Interactive</title>
+    <?php
+    require_once("./_main/utils.php");
+    includeNoComments("./_main/head")
+    ?>
 </head>
 
 <body>
-    <h1>Doomhowl Interactive</h1>
-    <p>Solo game studio</p>
+    <?php
+    includeNoComments('./_comps/header');
+    ?>
 
     <?php
-        echo "Hello from PHP!";
+    echo "Hello from PHP!";
     ?>
 </body>
 
