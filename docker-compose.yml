@@ -1,0 +1,7 @@
+services:
+    doomhowl:
+        image: trafex/php-nginx
+        volumes:
+            - ./www:/var/www/html
+        ports:
+            - 8080:8080
