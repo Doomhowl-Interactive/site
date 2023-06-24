@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <?php
-    include("./.main/head.php")
-    ?>
-</head>
+<?php
+include("./.main/head.php")
+?>
 
 <body>
     <?php
     include("./.comps/header.php")
     ?>
-
-    <h1>Contact</h1>
+    <main>
+        <h1>Contact</h1>
+    </main>
 </body>
 
 </html>

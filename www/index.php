@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <?php
-    include("./.main/head.php")
-    ?>
-</head>
+<?php
+include("./.main/head.php")
+?>
 
 <body>
     <?php
     include("./.comps/header.php")
     ?>
-    <h1>Solo game studio</h1>
+    <main class="welcome">
+        <div>
+            <h1>Solo game studio</h1>
+        </div>
+        <div class="latest-game">
+            <p>put latest game here</p>
+        </div>
+    </main>
 </body>
 
 </html>

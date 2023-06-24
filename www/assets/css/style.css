@@ -1,0 +1,7 @@
+body {
+    background-color: var(--bs-body-bg);
+}
+
+.welcome h1 {
+    color: white;
+}
