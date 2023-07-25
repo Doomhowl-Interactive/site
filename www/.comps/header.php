@@ -6,7 +6,7 @@ $record = array(
 );
 
 // Function to generate Bootstrap navbar list items
-function generateNavbarItems($record)
+function generateNavbarItems(array $record): string
 {
     $items = '';
 
