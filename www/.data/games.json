@@ -1,0 +1,10 @@
+{
+    "Lucky Platformer": {
+        "description": "lucky_platformer.html",
+        "images": ["lucky_platformer.png"],
+        "links": {
+            "itchio": "",
+            "github": ""
+        }
+    }
+}
