@@ -8,10 +8,11 @@ include("./.main/head.php")
     ?>
     <main class="welcome">
         <div>
-            <h1>Solo game studio</h1>
+            <h2>Doomhowl Interactive</h2>
+            <h1>Solo developer's game studio</h1>
         </div>
-        <div class="latest-game">
-            <p>put latest game here</p>
+        <div class="game-slideshow">
+            <p>put game slideshow here</p>
         </div>
     </main>
 </body>

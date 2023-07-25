@@ -1,13 +1,23 @@
 <?php
-include("./.main/head.php")
+include("./.main/head.php");
+
+function linkEmail(string $em)
+{
+    $link = "mailto:" . $em;
+    return "<a href=" . $link . ">" . $em . "</a>";
+}
+
 ?>
 
 <body>
     <?php
     include("./.comps/header.php")
-    ?>
+        ?>
     <main>
         <h1>Contact</h1>
+        <p>Email:
+            <?php echo linkEmail("support@doomhowl-interactive.com") ?>
+        </p>
     </main>
 </body>
 

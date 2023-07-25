@@ -2,6 +2,10 @@ body {
     background-color: var(--bs-body-bg);
 }
 
+main {
+    padding: 3rem 0 6rem 6rem;
+}
+
 .welcome h1 {
     color: white;
 }
