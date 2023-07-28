@@ -2,7 +2,7 @@
 
 function parse_games(): mixed
 {
-    $path = "./.data/games.json";
+    $path = "/var/www/php/data/games.json";
     $file = fopen($path, "r");
     $contents = fread($file, filesize($path));
     fclose($file);

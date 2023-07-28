@@ -3,5 +3,6 @@ services:
         image: trafex/php-nginx
         volumes:
             - ./www:/var/www/html
+            - ./php:/var/www/php
         ports:
             - 8080:8080

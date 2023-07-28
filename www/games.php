@@ -1,7 +1,5 @@
 <?php
-include("./.main/head.php");
-include("./.data/gamestore.php");
-include("./.comps/gamecard.php");
+include("./.lib/common.php");
 
 function get_game_list_items(): string
 {
@@ -18,9 +16,6 @@ function get_game_list_items(): string
 ?>
 
 <body>
-    <?php
-    include("./.comps/header.php")
-        ?>
     <main>
         <h1>Games</h1>
         <ul>

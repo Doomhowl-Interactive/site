@@ -1,19 +1,15 @@
 <?php
-include("./.main/head.php");
-include("./.comps/slideshow.php");
+include("/var/www/php/common.php");
 ?>
 
 <body>
-    <?php
-    include("./.comps/header.php")
-        ?>
     <main class="welcome">
-        <div>
+        <div className="title-header">
             <h2>Doomhowl Interactive</h2>
             <h1>Solo developer's game studio</h1>
         </div>
-        <div class="game-slideshow">
-            <?php echo renderSlideshow(); ?>
+        <div class=" game-slideshow">
+            <?php echo render_slideshow(); ?>
         </div>
     </main>
 </body>

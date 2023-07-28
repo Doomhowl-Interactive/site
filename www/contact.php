@@ -1,5 +1,5 @@
 <?php
-include("./.main/head.php");
+include("./.lib/common.php");
 
 function linkEmail(string $em)
 {
@@ -10,9 +10,6 @@ function linkEmail(string $em)
 ?>
 
 <body>
-    <?php
-    include("./.comps/header.php")
-        ?>
     <main>
         <h1>Contact</h1>
         <p>Email:
