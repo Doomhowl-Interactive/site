@@ -9,6 +9,7 @@ include("/var/www/php/common.php");
 
 <body>
 <?php include("navbar.php") ?>
+<?php include("preamble.php") ?>
 
 <main>
     <h1>Games</h1>

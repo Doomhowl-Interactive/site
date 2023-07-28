@@ -15,6 +15,7 @@ function link_email(string $em)
 
 <body>
     <?php include("navbar.php") ?>
+    <?php include("preamble.php") ?>
     <main>
         <h1>Contact</h1>
         <p>Email:

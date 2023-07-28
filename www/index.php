@@ -8,6 +8,8 @@ include("/var/www/php/common.php");
 
 <body>
 <?php include("navbar.php") ?>
+<?php include("preamble.php") ?>
+
 <main class="welcome">
     <div className="title-header">
         <h2>Doomhowl Interactive</h2>

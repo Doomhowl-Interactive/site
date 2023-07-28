@@ -15,6 +15,11 @@ main {
 div.title-header {
 }
 
+.preamble {
+    margin: 1rem 1rem;
+}
+
 .welcome h1 {
     color: white;
 }
+
