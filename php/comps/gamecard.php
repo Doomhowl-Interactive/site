@@ -1,8 +1,7 @@
 <?php
 
-function gamecard($game_name, $game_details)
+function gamecard(Game $game)
 {
-    $title = "work in progress";
-    echo "<li>" . $title . "</li>";
+    echo "<li>" . $game->name . "</li>";
 }
 

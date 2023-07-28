@@ -1,38 +1,34 @@
 <?php
+global $games;
 include("/var/www/php/common.php");
-
-function get_game_list_items(): string
-{
-    $games = parse_games();
-    $items = "";
-
-    foreach ($games as $gameName => $gameDetails) {
-        $items .= render_game_card($gameName, $gameDetails);
-    }
-
-    return $items;
-}
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+<?php include("head.php") ?>
 
 <body>
-    <main>
-        <h1>Games</h1>
-        <ul>
-            <li>put game list here</li>
+<?php include("navbar.php") ?>
 
-            <?php echo get_game_list_items() ?>
+<main>
+    <h1>Games</h1>
+    <ul>
+        <li>put game list here</li>
+        <?php
+        include("gamecard.php");
 
-            <li>
-                <p>
-                    <?php var_dump(parse_games()) ?>
-                </p>
-            </li>
-        </ul>
-    </main>
+        global $games;
+        foreach ($games as $game) {
+            gamecard($game);
+        }
+        ?>
+        <li>
+            <p>
+                <?php var_dump($games) ?>
+            </p>
+        </li>
+    </ul>
+</main>
 </body>
 
 </html>

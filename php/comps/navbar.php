@@ -1,39 +1,25 @@
 <?php
-// Sample record of names and URLs
-// TODO: rewrite as object
-$record = array(
-    array('name' => 'Home', 'url' => 'index.php'),
-    array('name' => 'Contact', 'url' => 'contact.php'),
-    array('name' => 'Games', 'url' => 'gamestore.php')
-);
 
-// Function to generate Bootstrap navbar list items
-function generateNavbarItems(array $record): string
+function navbar_item(string $name, string $url)
 {
-    $items = '';
+    // check if active
+    $req_url = $_SERVER["REQUEST_URI"];
+    $active = strrpos($req_url, $url);
 
-    foreach ($record as $item) {
-
-        // check if active
-        $url = $_SERVER["REQUEST_URI"];
-        $active = strrpos($url, $item['url']);
-
-        $classes = "nav-link";
-        if ($active !== false) {
-            $classes .= " active";
-        }
-
-        $aria = "";
-        if ($active !== false) {
-            $aria = 'aria-current="page"';
-        }
-
-        $items .= '
-        <li class="nav-item">
-            <a class="' . $classes . '"' . $aria . ' href="' . $item['url'] . '">' . $item['name'] . '</a>
-        </li>';
+    $classes = "nav-link";
+    if ($active !== false) {
+        $classes .= " active";
     }
-    return $items;
+
+    $aria = "";
+    if ($active !== false) {
+        $aria = 'aria-current="page"';
+    }
+
+    echo '
+        <li class="nav-item">
+            <a class="' . $classes . '"' . $aria . ' href="' . $url . '">' . $name . '</a>
+        </li>';
 }
 ?>
 
@@ -49,7 +35,9 @@ function generateNavbarItems(array $record): string
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
-                <?php echo generateNavbarItems($record); ?>
+                <?php navbar_item("Home","index.php") ?>
+                <?php navbar_item("Contact","contact.php") ?>
+                <?php navbar_item("Games","games.php") ?>
             </ul>
         </div>
     </div>
