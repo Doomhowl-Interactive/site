@@ -4,7 +4,7 @@
 $record = array(
     array('name' => 'Home', 'url' => 'index.php'),
     array('name' => 'Contact', 'url' => 'contact.php'),
-    array('name' => 'Games', 'url' => 'games.php')
+    array('name' => 'Games', 'url' => 'gamestore.php')
 );
 
 // Function to generate Bootstrap navbar list items

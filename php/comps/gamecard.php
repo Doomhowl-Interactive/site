@@ -1,8 +1,8 @@
 <?php
 
-function render_game_card(string $title, mixed $details): string
+function gamecard($game_name, $game_details)
 {
-    return "<li>" . $title . "</li>";
+    $title = "work in progress";
+    echo "<li>" . $title . "</li>";
 }
 
-?>

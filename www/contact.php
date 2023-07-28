@@ -1,7 +1,7 @@
 <?php
-include("./.lib/common.php");
+include("/var/www/php/common.php");
 
-function linkEmail(string $em)
+function link_email(string $em)
 {
     $link = "mailto:" . $em;
     return "<a href=" . $link . ">" . $em . "</a>";
@@ -9,11 +9,16 @@ function linkEmail(string $em)
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<?php include("head.php") ?>
+
 <body>
+    <?php include("navbar.php") ?>
     <main>
         <h1>Contact</h1>
         <p>Email:
-            <?php echo linkEmail("support@doomhowl-interactive.com") ?>
+            <?php echo link_email("contact@doomhowl-interactive.com") ?>
         </p>
     </main>
 </body>

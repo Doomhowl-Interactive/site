@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
-
 <head>
     <title>Doomhowl Interactive</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">

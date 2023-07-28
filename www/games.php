@@ -1,5 +1,5 @@
 <?php
-include("./.lib/common.php");
+include("/var/www/php/common.php");
 
 function get_game_list_items(): string
 {
@@ -14,6 +14,9 @@ function get_game_list_items(): string
 }
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
 
 <body>
     <main>
