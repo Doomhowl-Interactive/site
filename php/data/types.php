@@ -47,4 +47,9 @@ class Game {
         $this->extra_links[] = $link;
         return $this;
     }
+
+    public function visible(bool $visible): Game {
+        $this->visible = $visible;
+        return $this;
+    }
 }

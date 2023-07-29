@@ -1,5 +1,7 @@
 <?php
 
 $games = array(
-    new Game("Lucky Platformer", "A RNG based platformer"),
+    "lucky" => (
+        new Game("Lucky Platformer", "A RNG based platformer"))
+            ->visible(true)
 );
