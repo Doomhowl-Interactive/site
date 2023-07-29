@@ -10,8 +10,8 @@ include("/var/www/php/common.php");
 <?php include("navbar.php") ?>
 <?php include("preamble.php") ?>
 
-<main class="welcome">
-    <div className="title-header">
+<main class="container">
+    <div class="title-header">
         <h2>Doomhowl Interactive</h2>
         <h1>Solo developer's game studio</h1>
     </div>

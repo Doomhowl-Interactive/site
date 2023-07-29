@@ -1,3 +1,7 @@
 body {
     background-color: var(--bs-body-bg);
 }
+
+nav {
+    margin-bottom: 1rem;
+}

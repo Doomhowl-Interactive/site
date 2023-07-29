@@ -11,7 +11,7 @@ include("/var/www/php/common.php");
 <?php include("navbar.php") ?>
 <?php include("preamble.php") ?>
 
-<main>
+<main class="container">
     <h1>Games</h1>
     <ul>
         <li>put game list here</li>
