@@ -11,8 +11,9 @@ class Link {
 
 class Game {
     public string $name;
+    public string $display_name;
     public array $images;
-    public string $desc;
+    public string $description;
     public string $state;
     public bool $visible;
     // download links
@@ -22,9 +23,10 @@ class Game {
 
     public array $extra_links;
     public bool $adult;
-    public function __construct(string $name, string $desc) {
+    public function __construct(string $name, string $description) {
         $this->name = $name;
-        $this->desc = $desc;
+        $this->display_name = $name;
+        $this->description = $description;
         $this->images = array();
         $this->state = "released";
         $this->visible = true;
@@ -35,6 +37,11 @@ class Game {
 
         $this->extra_links = array();
         $this->adult = false;
+    }
+
+    public function display_name(string $display_name): Game {
+        $this->display_name = $display_name;
+        return $this;
     }
 
     public function image(string $path): Game {

@@ -13,22 +13,14 @@ include("/var/www/php/common.php");
 
 <main class="container">
     <h1>Games</h1>
-    <ul>
-        <li>put game list here</li>
-        <?php
-        include("gamecard.php");
+    <?php
+    include("gamecard.php");
 
-        global $games;
-        foreach ($games as $game) {
-            gamecard($game);
-        }
-        ?>
-        <li>
-            <p>
-                <?php var_dump($games) ?>
-            </p>
-        </li>
-    </ul>
+    global $games;
+    foreach ($games as $game) {
+        gamecard($game);
+    }
+    ?>
 </main>
 </body>
 

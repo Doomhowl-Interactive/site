@@ -5,3 +5,7 @@ body {
 nav {
     margin-bottom: 1rem;
 }
+
+.card {
+    text-decoration: none;
+}

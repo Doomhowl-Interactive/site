@@ -2,6 +2,8 @@
 
 $games = array(
     "lucky" => (
-        new Game("Lucky Platformer", "A RNG based platformer"))
+        new Game("lucky-platformer", "a RNG based platforming game"))
+            ->display_name("Lucky Platformer")
+            ->image("assets/thumb.png")
             ->visible(true)
 );
