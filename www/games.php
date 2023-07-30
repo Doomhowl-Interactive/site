@@ -13,14 +13,18 @@ include("/var/www/php/common.php");
 
 <main class="container">
     <h1>Games</h1>
-    <?php
-    include("gamecard.php");
+    <div class="card-deck">
+        <?php
+        include("gamecard.php");
 
-    global $games;
-    foreach ($games as $game) {
-        gamecard($game);
-    }
-    ?>
+        global $games;
+        foreach ($games as $game) {
+            if ($game->visible) {
+                gamecard($game);
+            }
+        }
+        ?>
+    </div>
 </main>
 </body>
 

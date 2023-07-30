@@ -59,4 +59,14 @@ class Game {
         $this->visible = $visible;
         return $this;
     }
+
+    public function state(string $state): Game {
+        $this->state = $state;
+        return $this;
+    }
+
+    public function adult(): Game {
+        $this->adult = true;
+        return $this;
+    }
 }

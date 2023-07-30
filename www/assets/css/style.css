@@ -9,3 +9,8 @@ nav {
 .card {
     text-decoration: none;
 }
+
+.game-card {
+    display: inline-block;
+    margin-right: 2rem;
+}
