@@ -16,7 +16,7 @@ include("/var/www/php/common.php");
     ?>
 
     <main class="container">
-        <h1>Lucky Platformer</h1>
+        <h1>Space Typer</h1>
         <?php
         if ($game->visible) {
             include ".content.php";
