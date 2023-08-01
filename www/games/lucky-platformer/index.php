@@ -12,7 +12,7 @@ include("/var/www/php/common.php");
 <?php include("preamble.php") ?>
 
 <?php
-$game = $games["lucky"];
+$game = $games["lucky-platformer"];
 ?>
 
 <main class="container">

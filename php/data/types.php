@@ -16,6 +16,8 @@ class Game {
     public string $description;
     public string $state;
     public bool $visible;
+    public bool $featured;
+
     // download links
     public ?string $windows;
     public ?string $linux;
@@ -30,6 +32,7 @@ class Game {
         $this->images = array();
         $this->state = "released";
         $this->visible = true;
+        $this->featured = false;
 
         $this->windows = null;
         $this->linux = null;
@@ -57,6 +60,11 @@ class Game {
 
     public function visible(bool $visible): Game {
         $this->visible = $visible;
+        return $this;
+    }
+
+    public function featured(): Game {
+        $this->featured = true;
         return $this;
     }
 
