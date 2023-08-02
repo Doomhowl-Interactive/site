@@ -14,13 +14,20 @@ function slide_btn_text(Game $game)
     }
 }
 
-function slide(Game $slide)
+function slide(Game $slide, $first = false)
 {
     $full_img = "/games/" . $slide->name . "/" . $slide->images[0];
     $btn_text = slide_btn_text($slide);
+    $classes = ["slideshow-item"];
+    if ($first) {
+        $classes[] = "active";
+    }
+    $class_name = implode(" ", $classes);
     echo <<<HTML
-        <div class="slideshow-item">
-            <img draggable="false" src="$full_img" alt="$slide->name">
+        <div class="$class_name">
+            <div class="slideshow-image">
+                <img draggable="false" src="$full_img" alt="$slide->name">
+            </div>
             <div class="slideshow-description">
                 <h3>{$slide->display_name}</h3>
                 <p>{$slide->description}</p>
@@ -36,12 +43,19 @@ HTML;
 <div class="slideshow">
     <div class="slideshow-inner">
         <?php
+        $i = 0;
         foreach ($games as $game) {
             if ($game->visible && $game->featured) {
-                slide($game);
+                slide($game, $i == 0);
+                $i++;
             }
         }
         ?>
     </div>
-    <script src="/assets/js/slideshow.js"></script>
+    <div class="slideshow-button left hidden">
+    </div>
+    <div class="slideshow-button right hidden">
+    </div>
+    <script src="/assets/js/slideshow.js">
+    </script>
 </div>

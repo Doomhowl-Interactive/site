@@ -10,6 +10,10 @@ nav img {
     margin-right: 0.5rem;
 }
 
+.hidden {
+    opacity: 0 !important;
+}
+
 .card {
     text-decoration: none;
 }
