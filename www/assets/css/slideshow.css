@@ -31,6 +31,10 @@
     background-color: var(--bs-gray-dark);
 }
 
+.slideshow-description a.btn {
+    width: 5rem;
+}
+
 .slideshow-item img {
     object-fit: cover;
     border-top-left-radius: var(--slide-border-radius);

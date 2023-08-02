@@ -1,15 +1,18 @@
 <?php
 
-class Link {
+class Link
+{
     public string $name;
     public string $url;
-    public function __construct(string $name, string $url) {
+    public function __construct(string $name, string $url)
+    {
         $this->name = $name;
         $this->url = $url;
     }
 }
 
-class Game {
+class Game
+{
     public string $name;
     public string $display_name;
     public array $images;
@@ -25,7 +28,8 @@ class Game {
 
     public array $extra_links;
     public bool $adult;
-    public function __construct(string $name, string $description) {
+    public function __construct(string $name, string $description)
+    {
         $this->name = $name;
         $this->display_name = $name;
         $this->description = $description;
@@ -42,38 +46,50 @@ class Game {
         $this->adult = false;
     }
 
-    public function display_name(string $display_name): Game {
+    public function is_downloadable()
+    {
+        return $this->windows != null || $this->linux != null || $this->mac != null;
+    }
+
+    public function display_name(string $display_name): Game
+    {
         $this->display_name = $display_name;
         return $this;
     }
 
-    public function image(string $path): Game {
+    public function image(string $path): Game
+    {
         $this->images[] = $path;
         return $this;
     }
 
-    public function link(string $name, string $url): Game {
+    public function link(string $name, string $url): Game
+    {
         $link = new Link($name, $url);
         $this->extra_links[] = $link;
         return $this;
     }
 
-    public function visible(bool $visible): Game {
+    public function visible(bool $visible): Game
+    {
         $this->visible = $visible;
         return $this;
     }
 
-    public function featured(): Game {
+    public function featured(): Game
+    {
         $this->featured = true;
         return $this;
     }
 
-    public function state(string $state): Game {
+    public function state(string $state): Game
+    {
         $this->state = $state;
         return $this;
     }
 
-    public function adult(): Game {
+    public function adult(): Game
+    {
         $this->adult = true;
         return $this;
     }
