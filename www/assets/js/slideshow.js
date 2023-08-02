@@ -11,15 +11,23 @@ function indexSlides() {
 }
 
 function refresh() {
+    // Update the slideshow navigation buttons
     _$buttonBackwards.classList.toggle("hidden", $slideIndex === 0);
     _$buttonForwards.classList.toggle(
         "hidden",
         $slideIndex === $slides.length - 1
     );
 
+    // Hide all slides except the one we want to show
     $slides.forEach((slide, index) => {
         slide.classList.toggle("hidden", index !== $slideIndex);
         slide.classList.toggle("active", index === $slideIndex);
+    });
+
+    // Update the slideshow indicators
+    const indicators = document.querySelectorAll(".slideshow-indicator");
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle("active", index === $slideIndex);
     });
 }
 
@@ -49,11 +57,21 @@ function showSlideshowButtons() {
     slideshowButtons.forEach((button) => {
         button.classList.remove("hidden");
     });
+    document.querySelector(".slideshow-indicators").classList.remove("hidden");
 }
 
 function linkSlideshowButtons() {
     _$buttonForwards.addEventListener("click", navigateForwards);
     _$buttonBackwards.addEventListener("click", navigateBackwards);
+
+    // Link the slideshow indicators
+    const indicators = document.querySelectorAll(".slideshow-indicator");
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => {
+            $slideIndex = index;
+            refresh();
+        });
+    });
 }
 
 document.addEventListener("DOMContentLoaded", () => {

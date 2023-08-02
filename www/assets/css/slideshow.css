@@ -29,6 +29,7 @@
 }
 
 .slideshow-description {
+    font-size: 1.2rem;
     flex-grow: 1;
     padding: 1rem;
     border-top-right-radius: var(--slide-border-radius);
@@ -52,6 +53,42 @@
     border-bottom-left-radius: var(--slide-border-radius);
 }
 
+.slideshow-indicators {
+    position: absolute;
+    left: 0;
+    bottom: 0.8rem;
+    height: 1rem;
+    width: 100%;
+    z-index: 3;
+
+    display: flex;
+    justify-content: center;
+    filter: invert(1);
+}
+
+.slideshow-indicator {
+    background-image: url("/assets/icons/dot.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 4rem;
+    width: 1rem;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+.slideshow-indicator.active {
+    opacity: 0.7;
+}
+
+slideshow-indicator.active:hover {
+    opacity: 0.9;
+}
+
+.slideshow-indicator:hover {
+    opacity: 0.5;
+}
+
 .slideshow-button {
     position: absolute;
     height: 100%;
@@ -68,6 +105,10 @@
 
 .slideshow-button:hover {
     opacity: 0.5;
+}
+
+.slideshow-button:not(.hidden):hover {
+    cursor: pointer;
 }
 
 .slideshow-button.left {

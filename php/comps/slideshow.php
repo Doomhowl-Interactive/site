@@ -37,17 +37,17 @@ function slide(Game $slide, $first = false)
 HTML;
 }
 
+$item_count = 0;
 ?>
 
 <link rel="stylesheet" href="/assets/css/slideshow.css">
 <div class="slideshow">
     <div class="slideshow-inner">
         <?php
-        $i = 0;
         foreach ($games as $game) {
             if ($game->visible && $game->featured) {
-                slide($game, $i == 0);
-                $i++;
+                slide($game, $item_count == 0);
+                $item_count++;
             }
         }
         ?>
@@ -56,6 +56,19 @@ HTML;
     </div>
     <div class="slideshow-button right hidden">
     </div>
-    <script src="/assets/js/slideshow.js">
+    <div class="slideshow-indicators hidden">
+        <?php
+        for ($i = 0; $i < $item_count; $i++) {
+            $class_name = "slideshow-indicator";
+            if ($i == 0) {
+                $class_name .= " active";
+            }
+            echo <<<HTML
+                <div class="$class_name"></div>
+HTML;
+        }
+        ?>
+    </div>
+    <script src=" /assets/js/slideshow.js">
     </script>
 </div>
