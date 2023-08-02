@@ -58,7 +58,6 @@
     width: 3rem;
     background-color: white;
     transition: opacity 0.2s ease-in-out;
-    transition: width 0.2s ease-in-out;
     opacity: 0.2;
     background-size: 2rem;
     filter: invert(1);
@@ -69,7 +68,6 @@
 
 .slideshow-button:hover {
     opacity: 0.5;
-    width: 3rem;
 }
 
 .slideshow-button.left {
