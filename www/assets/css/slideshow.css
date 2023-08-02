@@ -74,7 +74,6 @@
     width: 1rem;
     transition: opacity 0.2s ease-in-out;
     opacity: 0.2;
-    cursor: pointer;
 }
 
 .slideshow-indicator.active {
@@ -107,7 +106,8 @@ slideshow-indicator.active:hover {
     opacity: 0.5;
 }
 
-.slideshow-button:not(.hidden):hover {
+.slideshow-button:not(.hidden):hover,
+.slideshow-indicators:not(.hidden) .slideshow-indicator:hover {
     cursor: pointer;
 }
 
