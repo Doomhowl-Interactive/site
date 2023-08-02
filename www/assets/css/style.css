@@ -6,6 +6,10 @@ nav {
     margin-bottom: 1rem;
 }
 
+nav img {
+    margin-right: 0.5rem;
+}
+
 .card {
     text-decoration: none;
 }
