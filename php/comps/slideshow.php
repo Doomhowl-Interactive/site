@@ -43,4 +43,5 @@ HTML;
         }
         ?>
     </div>
+    <script src="/assets/js/slideshow.js"></script>
 </div>
