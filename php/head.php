@@ -17,6 +17,9 @@ include_once("/var/www/php/common.php");
     <?php
     include_once("assets.php");
 
+    link_dynamic_css("pop-in.css");
+    link_dynamic_script("pop-in.js");
+
     $url = dynamic_asset("/assets/css/style.css");
     echo <<<HTML
         <!-- Link custom CSS -->

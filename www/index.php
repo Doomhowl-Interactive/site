@@ -17,6 +17,8 @@ include_once("/var/www/php/common.php");
     </div>
     <?php include_once("slideshow.php") ?>
 </main>
+
+
 </body>
 
 </html>

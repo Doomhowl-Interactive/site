@@ -12,3 +12,8 @@ function link_dynamic_css(string $path)
     $url = "/assets/css/" . dynamic_asset($path);
     echo "<link rel=\"stylesheet\" href=\"$url\">";
 }
+
+function link_dynamic_script(string $path) {
+    $url = "/assets/js/" . dynamic_asset($path);
+    echo "<script src=\"$url\"></script>";
+}
