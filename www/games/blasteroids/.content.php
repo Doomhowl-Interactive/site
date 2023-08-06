@@ -1,3 +1,10 @@
+<div class="container">
+    <div class="alert alert-info">
+        <h3>ℹ️ Notice</h3>
+        <p>Blasteroids is being rewritten for the web and will be available here shortly.</p>
+    </div>
+</div>
+
 <h2>An <em>Asteroids</em> clone with multiple theming options!</h2>
 
 <h3>How to play:</h3>
