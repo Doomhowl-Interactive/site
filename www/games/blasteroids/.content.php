@@ -27,5 +27,5 @@ include_once("image.php");
 
 <?php
     image("assets/screenshot1.png", "Gameplay");
-    image("assets/screenshot2.png", "Main menu");
+    image("assets/screenshot2.png", "Settings menu");
 ?>
