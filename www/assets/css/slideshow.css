@@ -126,3 +126,7 @@ slideshow-indicator.active:hover {
     border-bottom-right-radius: var(--slide-border-radius);
     background-image: url("/assets/icons/right.svg");
 }
+
+.slideshow-description .indev {
+    margin-left: 0.5rem;
+}

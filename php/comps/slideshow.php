@@ -23,6 +23,7 @@ function slide(Game $slide, $first = false)
         $classes[] = "active";
     }
     $class_name = implode(" ", $classes);
+    $in_dev = $slide->state == "in-dev";
     echo <<<HTML
         <div class="$class_name">
             <div class="slideshow-image">
@@ -32,7 +33,14 @@ function slide(Game $slide, $first = false)
                 <h3>{$slide->display_name}</h3>
                 <p>{$slide->description}</p>
                 <a href="/games/{$slide->name}" class="btn btn-primary">{$btn_text}</a>
-            </div>
+HTML;
+    if ($in_dev) {
+        echo <<<HTML
+                <span class="indev">⚠️ In development</span>
+HTML;
+    }
+    echo <<<HTML
+</div>
         </div>
 HTML;
 }
