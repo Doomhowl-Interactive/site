@@ -36,8 +36,8 @@ function navbar_item(string $name, string $url)
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <?php navbar_item("Home","/index.php") ?>
-                <?php navbar_item("Contact","/contact.php") ?>
                 <?php navbar_item("Games","/games.php") ?>
+                <?php navbar_item("Contact","/contact.php") ?>
             </ul>
         </div>
     </div>

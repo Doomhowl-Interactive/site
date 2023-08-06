@@ -18,6 +18,7 @@ function link_email(string $em)
     <?php include("preamble.php") ?>
     <main class="container">
         <h1>Contact</h1>
+        <p>For business enquiries, questions and technical problems</p>
         <p>Email:
             <?php echo link_email("contact@doomhowl-interactive.com") ?>
         </p>

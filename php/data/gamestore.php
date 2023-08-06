@@ -14,6 +14,12 @@ $games = array(
         (new Game("lucky-platformer", "a RNG based platforming game"))
             ->display_name("Lucky Platformer")
             ->image("assets/thumb.png")
+            ->visible(false),
+    "blasteroids" =>
+        (new Game("blasteroids", "An 'Asteroids' clone with multiple theming options!"))
+            ->display_name("Blasteroids!")
+            ->image("assets/thumb.png")
             ->visible(true)
+            ->state("in-dev")
             ->featured(),
 );
