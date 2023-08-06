@@ -1,15 +1,15 @@
 <?php
 global $games;
-include("/var/www/php/common.php");
+include_once("/var/www/php/common.php");
 ?>
 
     <!DOCTYPE html>
     <html lang="en" data-bs-theme="dark">
-    <?php include("head.php") ?>
+    <?php include_once("head.php") ?>
 
     <body>
-    <?php include("navbar.php") ?>
-    <?php include("preamble.php") ?>
+    <?php include_once("navbar.php") ?>
+    <?php include_once("preamble.php") ?>
 
     <?php
     $game = $games["space-typer"];
@@ -19,9 +19,9 @@ include("/var/www/php/common.php");
         <h1>Space Typer</h1>
         <?php
         if ($game->visible) {
-            include ".content.php";
+            include_once ".content.php";
         } else {
-            include "unavailable.php";
+            include_once "unavailable.php";
         }
         ?>
     </main>

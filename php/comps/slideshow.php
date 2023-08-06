@@ -1,5 +1,5 @@
 <?php
-include("/var/www/php/common.php");
+include_once("/var/www/php/common.php");
 
 global $games;
 
@@ -48,7 +48,10 @@ HTML;
 $item_count = 0;
 ?>
 
-<link rel="stylesheet" href="/assets/css/slideshow.css">
+<?php
+include_once("assets.php");
+link_dynamic_css("slideshow.css");
+?>
 <div class="slideshow">
     <div class="slideshow-inner">
         <?php

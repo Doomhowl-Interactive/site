@@ -1,5 +1,5 @@
 <?php
-include("/var/www/php/common.php");
+include_once("/var/www/php/common.php");
 ?>
 <head>
     <title>Doomhowl Interactive</title>
@@ -15,7 +15,7 @@ include("/var/www/php/common.php");
     </script>
 
     <?php
-    include("assets.php");
+    include_once("assets.php");
 
     $url = dynamic_asset("/assets/css/style.css");
     echo <<<HTML

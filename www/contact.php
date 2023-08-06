@@ -1,5 +1,5 @@
 <?php
-include("/var/www/php/common.php");
+include_once("/var/www/php/common.php");
 
 function link_email(string $em)
 {
@@ -11,11 +11,11 @@ function link_email(string $em)
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
-<?php include("head.php") ?>
+<?php include_once("head.php") ?>
 
 <body>
-    <?php include("navbar.php") ?>
-    <?php include("preamble.php") ?>
+    <?php include_once("navbar.php") ?>
+    <?php include_once("preamble.php") ?>
     <main class="container">
         <h1>Contact</h1>
         <p>For business enquiries, questions and technical problems</p>

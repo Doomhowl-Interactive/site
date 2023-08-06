@@ -1,6 +1,6 @@
 <?php
-include("/var/www/php/common.php");
-include("image.php");
+include_once("/var/www/php/common.php");
+include_once("image.php");
 ?>
 
 <div class="container">

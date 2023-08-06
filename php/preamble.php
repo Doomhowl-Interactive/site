@@ -1,3 +1,3 @@
 <section class="preamble">
-    <?php include("under_construction.php"); ?>
+    <?php include_once("under_construction.php"); ?>
 </section>
