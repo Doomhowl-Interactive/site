@@ -1,3 +1,8 @@
+<?php
+include("/var/www/php/common.php");
+include("image.php");
+?>
+
 <div class="container">
     <div class="alert alert-info">
         <h3>ℹ️ Notice</h3>
@@ -20,11 +25,7 @@
 
 <h3>Screenshots</h3>
 
-<figure>
-    <img src="./assets/screenshot1.png" alt="Blasteroids screenshot 1"/>
-    <figcaption>Gameplay</figcaption>
-</figure>
-<figure>
-    <img src="./assets/screenshot2.png" alt="Blasteroids screenshot 2"/>
-    <figcaption>Main menu</figcaption>
-</figure>
+<?php
+    image("assets/screenshot1.png", "Gameplay");
+    image("assets/screenshot2.png", "Main menu");
+?>

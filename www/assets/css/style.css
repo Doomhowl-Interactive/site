@@ -22,3 +22,7 @@ nav img {
     display: inline-block;
     margin-right: 2rem;
 }
+
+figure img {
+    max-width: 40%;
+}
