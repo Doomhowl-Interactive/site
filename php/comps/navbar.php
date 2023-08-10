@@ -23,7 +23,7 @@ function navbar_item(string $name, string $url)
 }
 ?>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a href="/" class="navbar-brand">
             <img width=40 height=40 src="/assets/logo.png" alt="logo" />
