@@ -55,5 +55,6 @@ def generate():
     
     page("games/index.html")
     page("games/blasteroids/index.html", has_google_play=True)
+    page("games/vortex/index.html", has_google_play=True)
     
 generate()
