@@ -2,9 +2,9 @@ import { MobileGame } from './types';
 
 export const mobileGames: MobileGame[] = [
   {
-    displayName: '(Coming soon))',
+    displayName: 'Vortex',
     iconPath: 'assets/icons/vortex.webp',
-    storePage: '#',
+    storePage: undefined,
   },
   {
     displayName: 'Blasteroids!',

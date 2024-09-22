@@ -37,7 +37,8 @@ import { isPlatformBrowser } from '@angular/common';
       font-optical-sizing: auto;
       font-weight: normal;
       font-style: normal;
-      color: rgb(255, 255, 255, 0.5);
+      color: rgb(255, 255, 255, 0.7);
+      transition: color 0.2s;
 
       &:hover {
         color: rgb(255, 255, 255, 0.9);
