@@ -8,7 +8,10 @@ import { mobileGames } from '../../data';
   template: `
     <div class="container p-3 d-flex justify-content-center">
       @for (game of games; track game.displayName) {
-      <app-comps-mobile-icon [game]="game"></app-comps-mobile-icon>
+      <app-comps-mobile-icon
+        [game]="game"
+        [tooltip]="game.displayName"
+      ></app-comps-mobile-icon>
       }
     </div>
   `,
