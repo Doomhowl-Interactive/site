@@ -1,0 +1,4 @@
+- [ ] Turn back button into component
+- [ ] Generialize licenses page
+- [ ] Mention Java and Kotlin library licenses
+- [ ] Make 404 page work

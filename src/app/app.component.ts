@@ -31,10 +31,11 @@ import { SocialsComponent } from './comps/socials.component';
           For business enquiries, questions and bug reports,<br />please contact
           us at doomhowl(dot)interactive&#64;gmail(dot)com.
         </p>
-        <p class="text-center">
+        <p class="text-center d-flex gap-2 justify-content-center">
           <a routerLink="/privacy" class="text-link-underline"
             >Privacy Policy</a
           >
+          <a routerLink="/licenses" class="text-link-underline">Licenses</a>
         </p>
         <p class="text-center">©2023-{{ currentYear }} Doomhowl Interactive</p>
         <app-comps-socials />

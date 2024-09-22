@@ -15,9 +15,6 @@ import { mobileGames } from '../../data';
       }
     </div>
   `,
-  styles: `
-
-  `,
   standalone: true,
   imports: [MobileIconComponent],
 })

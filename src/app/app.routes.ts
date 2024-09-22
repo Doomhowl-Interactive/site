@@ -2,9 +2,12 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home.component';
 import { PrivacyPolicyComponent } from './pages/privacy/privacy-policy.component';
 import { PageNotFoundComponent } from './pages/page-not-found.component';
+import { LicensesComponent } from './pages/licenses/licenses.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'privacy', component: PrivacyPolicyComponent },
+  { path: 'licenses', component: LicensesComponent },
+  { path: 'licenses/vortex', component: LicensesComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
