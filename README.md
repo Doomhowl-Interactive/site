@@ -1,3 +1,3 @@
 # Doomhowl Interactive
 
-The static website
+The website
