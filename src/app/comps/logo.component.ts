@@ -1,15 +1,19 @@
 import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-comps-logo',
+  imports: [RouterLink],
   standalone: true,
   template: `
-    <section class="position-relative">
+    <section class="position-relative user-select-none">
       <div
         class="position-absolute w-100 d-flex justify-content-center align-items-center"
       >
-        <h2 class="text-center">Doomhowl Interactive</h2>
+        <a routerLink="/" class="text-decoration-none">
+          <h2 class="text-center">Doomhowl Interactive</h2>
+        </a>
       </div>
       <div id="logo" class="d-flex justify-content-center">
         <canvas
