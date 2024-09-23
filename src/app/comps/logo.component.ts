@@ -9,7 +9,7 @@ import { isPlatformBrowser } from '@angular/common';
       <div
         class="position-absolute w-100 d-flex justify-content-center align-items-center"
       >
-        <h1 class="text-center">Doomhowl Interactive</h1>
+        <h2 class="text-center">Doomhowl Interactive</h2>
       </div>
       <div id="logo" class="d-flex justify-content-center">
         <canvas
@@ -31,7 +31,7 @@ import { isPlatformBrowser } from '@angular/common';
       height: 400px;
     }
 
-    h1 {
+    h2 {
       font-family: "Gothica", serif;
       font-size: 3.5rem;
       font-optical-sizing: auto;
