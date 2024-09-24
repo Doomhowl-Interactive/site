@@ -13,8 +13,19 @@ type Lib = {
   selector: 'app-pages-licenses-vortex',
   imports: [RouterLink, BackButtonComponent],
   standalone: true,
+  styles: `
+    a {
+      color: lightgray;
+    }
+  `,
   template: `
     <app-comps-back-button />
+    <article>
+      <h1>App icon galaxy background</h1>
+      <small
+        >https://www.freepik.com/free-vector/realistic-galaxy-background_14960493.htm</small
+      >
+    </article>
     <h1>Vortex software licenses</h1>
     <nav>
       <ul>
