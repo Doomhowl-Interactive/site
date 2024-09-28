@@ -4,7 +4,7 @@ export const mobileGames: MobileGame[] = [
   {
     displayName: 'Vortex',
     iconPath: 'assets/icons/vortex.webp',
-    storePage: undefined,
+    storePage: 'https://play.google.com/store/apps/details?id=com.doomhowl.vortex',
   },
   {
     displayName: 'Blasteroids!',
