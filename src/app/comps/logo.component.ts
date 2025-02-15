@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -7,21 +6,27 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   standalone: true,
   template: `
-    <section class="position-relative user-select-none">
+    <section class="position-relative user-select-none pt-3 pb-2">
       <div
         class="position-absolute w-100 d-flex justify-content-center align-items-center"
       >
-        <a routerLink="/" class="text-decoration-none">
-          <h2 class="text-center">Doomhowl Interactive</h2>
+        <a
+          routerLink="/"
+          class="text-decoration-none"
+          style="text-shadow: #fa0c0c 1px 0 10px;"
+        >
+          <h2 class="text-center" style="padding-bottom: 12rem">
+            Doomhowl Interactive
+          </h2>
         </a>
       </div>
       <div id="logo" class="d-flex justify-content-center">
-        <canvas
-          width="400"
-          height="400"
-          id="moon"
-          (contextmenu)="doNothing()"
-        ></canvas>
+        <img
+          src="logo-no-background.png"
+          width="400px"
+          height="400px"
+          alt="Doomhowl Interactive"
+        />
       </div>
     </section>
   `,
@@ -50,28 +55,4 @@ import { RouterLink } from '@angular/router';
     }
   `,
 })
-export class LogoComponent implements AfterViewInit {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-
-  ngAfterViewInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      // HACK: inject old Javascript code
-      if (!document.querySelector('#logo scripts')) {
-        const group = document.createElement('div');
-        group.appendChild(this.createScriptTag('/assets/js/p5.js'));
-        group.appendChild(this.createScriptTag('/assets/js/moon.js'));
-        document.querySelector('#logo')!.appendChild(group);
-      }
-    }
-  }
-
-  doNothing() {
-    return false;
-  }
-
-  private createScriptTag(src: string): HTMLScriptElement {
-    const elem = document.createElement('script');
-    elem.src = src;
-    return elem;
-  }
-}
+export class LogoComponent {}
