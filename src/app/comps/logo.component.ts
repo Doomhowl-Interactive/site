@@ -22,6 +22,7 @@ import { RouterLink } from '@angular/router';
       </div>
       <div id="logo" class="d-flex justify-content-center">
         <img
+          draggable="false"
           src="logo-no-background.png"
           width="400px"
           height="400px"
