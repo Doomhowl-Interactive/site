@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
           class="text-decoration-none"
           style="text-shadow: #fa0c0c 1px 0 10px;"
         >
-          <h2 class="text-center" style="padding-bottom: 12rem">
+          <h2 class="text-center" style="padding-top: 4rem">
             Doomhowl Interactive
           </h2>
         </a>
@@ -34,10 +34,6 @@ import { RouterLink } from '@angular/router';
     @font-face {
       font-family: "Gothica";
       src: url("/assets/fonts/Gothica-Book.ttf");
-    }
-
-    div:first-child {
-      height: 400px;
     }
 
     h2 {
