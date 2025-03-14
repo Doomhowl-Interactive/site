@@ -1,5 +1,5 @@
 export type MobileGame = {
   displayName: string;
   iconPath: string;
-  storePage?: string;
+  stores: { display: string; icon: string; url: string }[];
 };
