@@ -1,0 +1,10 @@
+figure:hover {
+  cursor: pointer;
+}
+img {
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
