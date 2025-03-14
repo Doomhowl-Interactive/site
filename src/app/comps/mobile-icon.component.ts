@@ -1,6 +1,7 @@
-import { Component, computed, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MobileGame } from '../../types';
+import { NgIconsModule } from '@ng-icons/core';
 
 @Component({
   selector: 'app-comps-mobile-icon',
@@ -22,7 +23,10 @@ import { MobileGame } from '../../types';
         <ul>
           <li *for="let store of game.stores">
             <a href="{{ store.url }}" target="_blank">
-              <img ngSrc="{{ store.icon }}" alt="{{ store.display }}" />
+              <li>
+                <ng-icon name="logo-google-play"></ng-icon>
+                <img ngSrc="{{ store.icon }}" alt="{{ store.display }}" />
+              </li>
             </a>
           </li>
         </ul>
@@ -42,7 +46,8 @@ import { MobileGame } from '../../types';
     }
   `,
   standalone: true,
-  imports: [NgOptimizedImage, CommonModule],
+  imports: [NgOptimizedImage, CommonModule, NgIconsModule],
+  providers: [NgIconsModule],
 })
 export class MobileIconComponent {
   @Input({})

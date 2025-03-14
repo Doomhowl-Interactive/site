@@ -21,6 +21,11 @@ export const mobileGames: MobileGame[] = [
         icon: 'assets/icons/google-play.png',
         url: 'https://play.google.com/store/apps/details?id=com.doomhowl.blasteroids',
       },
+      {
+        display: 'Chrome Web Store',
+        icon: 'assets/icons/chrome-web-store.png',
+        url: '#',
+      },
     ],
   },
 ];
