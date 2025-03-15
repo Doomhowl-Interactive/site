@@ -1,25 +1,29 @@
-<div class="container p-3 d-flex justify-content-center">
-  <div *ngFor="let game of games; let i = index">
-    <figure class="d-inline m-2 figure" (click)="clickAction(game, i)">
+<div class="container p-3 d-flex gap-3 justify-content-center">
+  <div
+    *ngFor="let game of games; let i = index"
+    (mouseenter)="showDropdown(i)"
+    (mouseleave)="hideDropdown(i)"
+  >
+    <figure (click)="clickAction(game, i)">
       <img
         [src]="game.iconPath"
-        class="rounded-4 shadow-lg figure-img img-fluid img-thumbnail"
+        class="rounded-4 shadow-lg img-fluid img-thumbnail"
         width="150"
         height="150"
         [alt]="game.displayName"
         [title]="game.displayName"
         draggable="false"
-        (contextmenu)="doNothing()"
+        (contextmenu)="null"
       />
     </figure>
-    <div class="dropdown" *ngIf="dropdownsVisible[i]">
-      <ul>
-        <li *for="let store of game.stores">
-          <a [href]="store.url" target="_blank">
-            <li>
-              <!--<ng-icon name="logo-google-play"></ng-icon>-->
-              <img [src]="store.icon" [alt]="store.display" />
-            </li>
+    <div
+      class="dropdown"
+      [style]="this.dropdownsVisible[i] ? 'opacity: 1' : 'opacity: 0'"
+    >
+      <ul class="bg-dark p-3 rounded-4 shadow-lg flex gap-2 img-thumbnail">
+        <li *ngFor="let store of game.stores">
+          <a [href]="store.url" target="_blank" [title]="store.display">
+            <ng-icon [name]="store.icon" size="26" />
           </a>
         </li>
       </ul>

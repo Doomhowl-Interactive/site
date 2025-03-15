@@ -2,7 +2,12 @@
 
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
+@import "tailwindcss";
 
 body {
   background-color: rgb(10, 10, 10) !important;
+}
+
+a {
+  color: lightgray;
 }

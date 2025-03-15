@@ -1,8 +1,10 @@
-<h1>Software licenses</h1>
-<nav>
-  <ul>
-    <li *ngFor="let link of links">
-      <a routerLink="link.url">{{ link.text }}</a>
-    </li>
-  </ul>
-</nav>
+<main class="container">
+  <h1>Software licenses</h1>
+  <nav>
+    <ul>
+      <li *ngFor="let link of links">
+        <a [routerLink]="link.url">{{ link.text }}</a>
+      </li>
+    </ul>
+  </nav>
+</main>

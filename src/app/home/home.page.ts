@@ -1,4 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { ionLogoChrome, ionLogoGooglePlaystore } from '@ng-icons/ionicons';
 
 export interface Game {
   displayName: string;
@@ -10,7 +13,9 @@ export interface Game {
   selector: 'app-home-page',
   templateUrl: 'home.page.html',
   styleUrl: 'home.page.scss',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, NgIcon],
+  providers: [provideIcons({ ionLogoGooglePlaystore, ionLogoChrome })],
 })
 export class HomePage {
   games: Game[] = mobileGames;
@@ -30,8 +35,14 @@ export class HomePage {
     }
   }
 
-  doNothing() {
-    return false;
+  showDropdown(i: number) {
+    this.dropdownsVisible[i] = true;
+    console.debug('showDropdown', i);
+  }
+
+  hideDropdown(i: number) {
+    this.dropdownsVisible[i] = false;
+    console.debug('hideDropdown', i);
   }
 }
 
@@ -42,7 +53,7 @@ const mobileGames: Game[] = [
     stores: [
       {
         display: 'Google Play',
-        icon: 'assets/icons/google-play.png',
+        icon: 'ionLogoGooglePlaystore',
         url: 'https://play.google.com/store/apps/details?id=com.doomhowl.vortex',
       },
     ],
@@ -53,12 +64,12 @@ const mobileGames: Game[] = [
     stores: [
       {
         display: 'Google Play',
-        icon: 'assets/icons/google-play.png',
+        icon: 'ionLogoGooglePlaystore',
         url: 'https://play.google.com/store/apps/details?id=com.doomhowl.blasteroids',
       },
       {
         display: 'Chrome Web Store',
-        icon: 'assets/icons/chrome-web-store.png',
+        icon: 'ionLogoChrome',
         url: '#',
       },
     ],

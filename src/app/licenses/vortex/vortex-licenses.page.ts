@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { NgFor, KeyValuePipe } from '@angular/common';
+import { NgFor, KeyValuePipe, CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'app-pages-licenses-vortex',
-    styleUrls: ['./vortex-licenses.page.scss'],
-    templateUrl: './vortex-licenses.page.html',
-    standalone: true,
-    imports: [NgFor, KeyValuePipe],
+  selector: 'app-pages-licenses-vortex',
+  styleUrls: ['./vortex-licenses.page.scss'],
+  templateUrl: './vortex-licenses.page.html',
+  standalone: true,
+  imports: [NgFor, KeyValuePipe, CommonModule],
 })
 export class VortexLicensesPage {
   libs: Record<string, string> = {
