@@ -1,6 +1,8 @@
 figure:hover {
   cursor: pointer;
 }
+
+li,
 img {
   transition: transform 0.2s;
 
@@ -11,4 +13,8 @@ img {
 
 .dropdown {
   transition: opacity 0.2s;
+
+  li {
+    height: 26px;
+  }
 }

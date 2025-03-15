@@ -1,39 +1,29 @@
-import { Component, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import {
-  Router,
-  RouterLink,
-  RouterModule,
-  RouterOutlet,
-} from '@angular/router';
-import { routes } from './app.routes';
-import { HomePage } from './home/home.page';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { NgIconsModule } from '@ng-icons/core';
-import { ionLogoGooglePlaystore } from '@ng-icons/ionicons';
-import { NotFoundPage } from './not-found/not-found.page';
-import { PrivacyPolicyPage } from './privacy/privacy-policy.page';
+import { afterNextRender, Component } from "@angular/core";
+import { Router, RouterLink, RouterModule, RouterOutlet } from "@angular/router";
+import { CommonModule, NgOptimizedImage } from "@angular/common";
+import { NgIcon, provideIcons } from "@ng-icons/core";
+import { ionLogoGooglePlaystore, ionLogoTwitch, ionLogoYoutube } from "@ng-icons/ionicons";
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.scss',
-    imports: [
-        CommonModule,
-        RouterLink,
-        RouterOutlet,
-        RouterModule,
-        NgOptimizedImage,
-    ]
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrl: "./app.component.scss",
+  imports: [CommonModule, RouterLink, RouterOutlet, RouterModule, NgIcon, NgOptimizedImage],
+  providers: [provideIcons({ ionLogoGooglePlaystore, ionLogoTwitch, ionLogoYoutube })],
 })
 export class AppComponent {
-  footerIconSize = 50 as const;
   currentYear = new Date().getUTCFullYear();
+  email = "";
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    // Hide email address from scrapers
+    afterNextRender(() => {
+      this.email = "doomhowl.interactive@gmail.com";
+    });
+  }
 
   goHome() {
-    console.log('Navigating to home page');
-    this.router.navigate(['/']);
+    console.log("Navigating to home page");
+    this.router.navigate(["/"]);
   }
 }

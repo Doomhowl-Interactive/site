@@ -1,13 +1,10 @@
-<div class="container p-3 d-flex gap-3 justify-content-center">
-  <div
-    *ngFor="let game of games; let i = index"
-    (mouseenter)="showDropdown(i)"
-    (mouseleave)="hideDropdown(i)"
-  >
-    <figure (click)="clickAction(game, i)">
+<main class="container p-3 d-flex gap-3 items-start justify-content-center user-select-none">
+  <div *ngFor="let game of games; let i = index" (mouseleave)="hideDropdown(i)">
+    <figure (click)="clickAction(game, i)" (mouseenter)="showDropdown(i)">
       <img
-        [src]="game.iconPath"
+        [ngSrc]="game.iconPath"
         class="rounded-4 shadow-lg img-fluid img-thumbnail"
+        [style]="this.dropdownsVisible[i] ? 'transform: scale(1.05)':''"
         width="150"
         height="150"
         [alt]="game.displayName"
@@ -17,16 +14,17 @@
       />
     </figure>
     <div
+      *ngIf="game.stores.length > 1"
       class="dropdown"
       [style]="this.dropdownsVisible[i] ? 'opacity: 1' : 'opacity: 0'"
     >
       <ul class="bg-dark p-3 rounded-4 shadow-lg flex gap-2 img-thumbnail">
         <li *ngFor="let store of game.stores">
-          <a [href]="store.url" target="_blank" [title]="store.display">
+          <a *ngIf="this.dropdownsVisible[i]" [href]="store.url" target="_blank" [title]="store.display">
             <ng-icon [name]="store.icon" size="26" />
           </a>
         </li>
       </ul>
     </div>
   </div>
-</div>
+</main>
