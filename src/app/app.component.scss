@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Gothica";
+  src: url("/assets/fonts/Gothica-Book.ttf");
+}
+
+h2 {
+  font-family: "Gothica", serif;
+  font-size: 3.5rem;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  color: rgb(255, 255, 255, 0.7);
+  transition: color 0.2s;
+
+  &:hover {
+    color: rgb(255, 255, 255, 0.9);
+  }
+}
+
+footer {
+  main {
+    color: darkgray;
+  }
+  a {
+    color: lightgray;
+  }
+}
+@media (max-width: 576px) {
+  footer > div {
+    width: 100% !important;
+  }
+}

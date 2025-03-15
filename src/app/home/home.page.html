@@ -1,24 +1,24 @@
 <div class="container p-3 d-flex justify-content-center">
-  <div *ngFor="let game of games">
-    <figure class="d-inline m-2 figure" (click)="clickAction()">
+  <div *ngFor="let game of games; let i = index">
+    <figure class="d-inline m-2 figure" (click)="clickAction(game, i)">
       <img
-        ngSrc="{{ game.iconPath }}"
+        [src]="game.iconPath"
         class="rounded-4 shadow-lg figure-img img-fluid img-thumbnail"
         width="150"
         height="150"
-        alt="{{ game.displayName }}"
-        title="{{ game.displayName }}"
+        [alt]="game.displayName"
+        [title]="game.displayName"
         draggable="false"
         (contextmenu)="doNothing()"
       />
     </figure>
-    <div class="popover" *ngIf="popoverVisible">
+    <div class="dropdown" *ngIf="dropdownsVisible[i]">
       <ul>
         <li *for="let store of game.stores">
-          <a href="{{ store.url }}" target="_blank">
+          <a [href]="store.url" target="_blank">
             <li>
-              <ng-icon name="logo-google-play"></ng-icon>
-              <img ngSrc="{{ store.icon }}" alt="{{ store.display }}" />
+              <!--<ng-icon name="logo-google-play"></ng-icon>-->
+              <img [src]="store.icon" [alt]="store.display" />
             </li>
           </a>
         </li>

@@ -1,15 +1,15 @@
 import { Routes } from '@angular/router';
-import { PrivacyPolicyComponent } from './privacy/privacy-policy.component';
-import { VortexLicensesComponent } from './pages/licenses/vortex/vortex-licenses.component';
-import { LicensesComponent } from './pages/licenses/licenses.component';
-import { BlasteroidsLicensesComponent } from './pages/licenses/blasteroids/blasteroids-licenses.component';
+import { PrivacyPolicyPage } from './privacy/privacy-policy.page';
 import { NotFoundPage } from './not-found/not-found.page';
+import { HomePage } from './home/home.page';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'privacy', component: PrivacyPolicyComponent },
-  { path: 'licenses', component: LicensesComponent },
-  { path: 'licenses/blasteroids', component: BlasteroidsLicensesComponent },
-  { path: 'licenses/vortex', component: VortexLicensesComponent },
+  { path: '', component: HomePage, pathMatch: 'full' },
+  { path: 'privacy', component: PrivacyPolicyPage },
+  {
+    path: 'licenses',
+    loadChildren: () =>
+      import('./licenses/licenses.module').then((m) => m.LicensesModule),
+  },
   { path: '**', component: NotFoundPage },
 ];
