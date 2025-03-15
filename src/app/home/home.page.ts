@@ -10,12 +10,11 @@ export interface Game {
 }
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: 'home.page.html',
-  styleUrl: 'home.page.scss',
-  standalone: true,
-  imports: [CommonModule, NgIcon],
-  providers: [provideIcons({ ionLogoGooglePlaystore, ionLogoChrome })],
+    selector: 'app-home-page',
+    templateUrl: 'home.page.html',
+    styleUrl: 'home.page.scss',
+    imports: [CommonModule, NgIcon],
+    providers: [provideIcons({ ionLogoGooglePlaystore, ionLogoChrome })]
 })
 export class HomePage {
   games: Game[] = mobileGames;

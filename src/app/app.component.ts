@@ -15,17 +15,16 @@ import { NotFoundPage } from './not-found/not-found.page';
 import { PrivacyPolicyPage } from './privacy/privacy-policy.page';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterLink,
-    RouterOutlet,
-    RouterModule,
-    NgOptimizedImage,
-  ],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    imports: [
+        CommonModule,
+        RouterLink,
+        RouterOutlet,
+        RouterModule,
+        NgOptimizedImage,
+    ]
 })
 export class AppComponent {
   footerIconSize = 50 as const;
