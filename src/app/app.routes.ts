@@ -1,16 +1,40 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home.component';
-import { PrivacyPolicyComponent } from './pages/privacy/privacy-policy.component';
-import { PageNotFoundComponent } from './pages/page-not-found.component';
-import { VortexLicensesComponent } from './pages/licenses/vortex/vortex-licenses.component';
-import { LicensesComponent } from './pages/licenses/licenses.component';
-import { BlasteroidsLicensesComponent } from './pages/licenses/blasteroids/blasteroids-licenses.component';
+import { PrivacyPolicyPage } from './privacy/privacy-policy.page';
+import { NotFoundPage } from './not-found/not-found.page';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'privacy', component: PrivacyPolicyComponent },
-  { path: 'licenses', component: LicensesComponent },
-  { path: 'licenses/blasteroids', component: BlasteroidsLicensesComponent },
-  { path: 'licenses/vortex', component: VortexLicensesComponent },
-  { path: '**', component: PageNotFoundComponent },
+  {
+    path: '',
+    loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
+    pathMatch: 'full',
+  },
+  { path: 'privacy', component: PrivacyPolicyPage },
+  {
+    path: 'licenses',
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./licenses/index/licenses-index.page').then(
+            (m) => m.LicensesIndexPage
+          ),
+      },
+      {
+        path: 'blasteroids',
+        loadComponent: () =>
+          import('./licenses/blasteroids/blasteroids-licenses.page').then(
+            (m) => m.BlasteroidsLicensesPage
+          ),
+      },
+      {
+        path: 'vortex',
+        loadComponent: () =>
+          import('./licenses/vortex/vortex-licenses.page').then(
+            (m) => m.VortexLicensesPage
+          ),
+      },
+      { path: '**', redirectTo: '' },
+    ],
+  },
+  { path: '**', component: NotFoundPage },
 ];

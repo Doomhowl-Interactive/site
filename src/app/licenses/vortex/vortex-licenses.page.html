@@ -1,0 +1,23 @@
+<h1>Vortex</h1>
+<h2>App icon galaxy background</h2>
+<a href="https://www.freepik.com/free-vector/realistic-galaxy-background_14960493.htm"
+  >https://www.freepik.com/free-vector/realistic-galaxy-background_14960493.htm</a
+>
+<h2>Fonts</h2>
+<ul>
+  <li><a href="https://www.1001fonts.com/closeness-font.html">https://www.1001fonts.com/closeness-font.html</a></li>
+  <li><a href="https://fonts.google.com/specimen/Rubik">https://fonts.google.com/specimen/Rubik</a></li>
+</ul>
+<h2>Vortex software licenses</h2>
+<nav>
+  <ul>
+    <li *ngFor="let lib of libs | keyvalue; let i = index">
+      <a href="/licenses/vortex#{{ i }}">{{ lib.key }}</a>
+    </li>
+  </ul>
+</nav>
+
+<article *ngFor="let lib of libs | keyvalue; let i = index" id="{{ i }}">
+  <h2>{{ lib.key }}</h2>
+  <pre>{{ lib.value }}</pre>
+</article>
