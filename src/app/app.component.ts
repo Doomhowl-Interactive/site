@@ -1,4 +1,4 @@
-import { afterNextRender, Component } from "@angular/core";
+import { afterNextRender, AfterViewInit, Component } from "@angular/core";
 import { Router, RouterLink, RouterModule, RouterOutlet } from "@angular/router";
 import { CommonModule, NgOptimizedImage } from "@angular/common";
 import { NgIcon, provideIcons } from "@ng-icons/core";
@@ -23,7 +23,6 @@ export class AppComponent {
   }
 
   goHome() {
-    console.log("Navigating to home page");
     this.router.navigate(["/"]);
   }
 }
