@@ -1,13 +1,13 @@
-import { CommonModule, NgOptimizedImage } from "@angular/common";
-import { Component } from "@angular/core";
+import { CommonModule, isPlatformBrowser, NgOptimizedImage } from "@angular/common";
+import { AfterViewInit, Component, OnInit } from "@angular/core";
 import { NgIcon, provideIcons } from "@ng-icons/core";
-import { ionLogoChrome, ionLogoGooglePlaystore } from "@ng-icons/ionicons";
+import { ionLogoChrome, ionLogoGooglePlaystore, ionGlobeOutline } from "@ng-icons/ionicons";
 import { DeviceDetectorService } from "ngx-device-detector";
 
 export interface Game {
   displayName: string;
   iconPath: string;
-  stores: { display: string; icon: string; url: string }[];
+  stores: { display: string; icon: string; url: string; wakeUpUrl?: string }[];
 }
 
 @Component({
@@ -15,14 +15,30 @@ export interface Game {
   templateUrl: "home.page.html",
   styleUrl: "home.page.scss",
   imports: [CommonModule, NgIcon, NgOptimizedImage],
-  providers: [provideIcons({ ionLogoGooglePlaystore, ionLogoChrome })],
+  providers: [provideIcons({ ionLogoGooglePlaystore, ionLogoChrome, ionGlobeOutline })],
 })
-export class HomePage {
+export class HomePage implements AfterViewInit {
   games: Game[] = mobileGames;
   dropdownsVisible: boolean[];
 
   constructor(private deviceService: DeviceDetectorService) {
     this.dropdownsVisible = new Array(this.games.length).fill(false);
+  }
+
+  ngAfterViewInit(): void {
+    // Wake up web apps so the user doesn't have to
+    // wait ridiculously long for them to cold start
+    for (const game of this.games) {
+      for (const store of game.stores) {
+        if (store.wakeUpUrl) {
+          fetch(store.wakeUpUrl)
+            .then(() => {
+              console.debug("Woke up", store.wakeUpUrl);
+            })
+            .catch(console.warn);
+        }
+      }
+    }
   }
 
   clickAction(game: Game, i: number): void {
@@ -37,12 +53,10 @@ export class HomePage {
 
   showDropdown(i: number) {
     this.dropdownsVisible[i] = true;
-    console.debug("showDropdown", i);
   }
 
   hideDropdown(i: number) {
     this.dropdownsVisible[i] = false;
-    console.debug("hideDropdown", i);
   }
 }
 
@@ -74,6 +88,12 @@ const mobileGames: Game[] = [
         url: "#",
       },
       */
+      {
+        display: "Web",
+        icon: "ionGlobeOutline",
+        url: "https://blasteroids.doomhowl-interactive.com",
+        wakeUpUrl: "https://blasteroids.doomhowl-interactive.com/health",
+      },
     ],
   },
 ];
