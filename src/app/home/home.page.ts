@@ -1,7 +1,7 @@
 import { CommonModule, NgOptimizedImage } from "@angular/common";
 import { Component } from "@angular/core";
 import { NgIcon, provideIcons } from "@ng-icons/core";
-import { ionLogoChrome, ionLogoGooglePlaystore } from "@ng-icons/ionicons";
+import { ionLogoChrome, ionLogoGooglePlaystore, ionGlobeOutline } from "@ng-icons/ionicons";
 import { DeviceDetectorService } from "ngx-device-detector";
 
 export interface Game {
@@ -15,7 +15,7 @@ export interface Game {
   templateUrl: "home.page.html",
   styleUrl: "home.page.scss",
   imports: [CommonModule, NgIcon, NgOptimizedImage],
-  providers: [provideIcons({ ionLogoGooglePlaystore, ionLogoChrome })],
+  providers: [provideIcons({ ionLogoGooglePlaystore, ionLogoChrome, ionGlobeOutline })],
 })
 export class HomePage {
   games: Game[] = mobileGames;
@@ -74,6 +74,11 @@ const mobileGames: Game[] = [
         url: "#",
       },
       */
+      {
+        display: "Web",
+        icon: 'ionGlobeOutline',
+        url: 'https://blasteroids.doomhowl-interactive.com'
+      }
     ],
   },
 ];
